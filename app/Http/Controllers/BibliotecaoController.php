@@ -2,83 +2,57 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Biblioteca;
 use Illuminate\Http\Request;
 
-class BibliotecaoController extends Controller
+class BibliotecaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $bibliotecas = Biblioteca::all();
+        return view('bibliotecas.index', compact('bibliotecas'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('bibliotecas.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nome' => 'required',
+            'endereco' => 'required',
+        ]);
+
+        Biblioteca::create($request->all());
+        return redirect()->route('bibliotecas.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(Biblioteca $biblioteca)
     {
-        //
+        return view('bibliotecas.show', compact('biblioteca'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Biblioteca $biblioteca)
     {
-        //
+        return view('bibliotecas.edit', compact('biblioteca'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request, Biblioteca $biblioteca)
     {
-        //
+        $request->validate([
+            'nome' => 'required',
+            'endereco' => 'required',
+        ]);
+
+        $biblioteca->update($request->all());
+        return redirect()->route('bibliotecas.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Biblioteca $biblioteca)
     {
-        //
+        $biblioteca->delete();
+        return redirect()->route('bibliotecas.index');
     }
 }

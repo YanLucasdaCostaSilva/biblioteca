@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Livro extends Model
 {
     use HasFactory; 
-    protected $fillable = ['titulo', 'isbn', 'ano_publicao', 'auto_id', 'biblioteca_id'];
+    protected $fillable = ['titulo', 'isbn', 'ano_publicacao', 'autor_id', 'biblioteca_id'];
 
     public function autor() {
         return $this->belongsTo(Autor::class);

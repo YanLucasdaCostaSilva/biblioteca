@@ -26,7 +26,7 @@ class BibliotecaController extends Controller
         ]);
 
         Biblioteca::create($request->all());
-        return redirect()->route('bibliotecas.index');
+        return redirect()->route('biblioteca.index');
     }
 
     public function show(Biblioteca $biblioteca)
@@ -47,12 +47,12 @@ class BibliotecaController extends Controller
         ]);
 
         $biblioteca->update($request->all());
-        return redirect()->route('bibliotecas.index');
+        return redirect()->route('biblioteca.index');
     }
 
     public function destroy(Biblioteca $biblioteca)
     {
         $biblioteca->delete();
-        return redirect()->route('bibliotecas.index');
+        return redirect()->route('biblioteca.index');
     }
 }

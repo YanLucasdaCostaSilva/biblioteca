@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\BibliotecaoController;
+use App\Http\Controllers\BibliotecaController;
 use App\Http\Controllers\LivroController;
 use App\Http\Controllers\AutorController;
 use App\Models\Autor;
@@ -19,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('livros', LivroController::class);
 Route::resource('autores', AutorController::class);
-Route::resource('biblioteca', BibliotecaoController::class);
+Route::resource('biblioteca', BibliotecaController::class);
+

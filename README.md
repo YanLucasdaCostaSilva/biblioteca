@@ -26,8 +26,9 @@ Antes de começar, certifique-se de ter instalado em sua máquina:
    
 
 2. *Instalar as dependências do Composer:*
-   bash
+   ```bash
    composer install
+   ```
    
 3. *Configurar o arquivo .env:*
 

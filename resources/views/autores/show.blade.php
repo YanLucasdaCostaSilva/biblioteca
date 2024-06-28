@@ -5,7 +5,7 @@
 
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">{{ $autor->nome }}</h5>
+            <h5 class="card-title">Nome do Autor: {{ $autor->nome }}</h5>
             <p class="card-text">Biografia: {{ $autor->biografia }}</p>
         </div>
     </div>

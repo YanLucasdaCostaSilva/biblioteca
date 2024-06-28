@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('livros', LivroController::class);
-Route::resource('autores', AutorController::class);
+Route::resource('autores', AutorController::class)->parameters([
+    'autores' => 'autor' 
+]);;
 Route::resource('biblioteca', BibliotecaController::class);
 

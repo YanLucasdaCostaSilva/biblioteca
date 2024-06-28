@@ -20,9 +20,10 @@ Antes de começar, certifique-se de ter instalado em sua máquina:
 
 1. *Clonar o repositório:*
 
-   bash
+   ```bash
    git clone https://github.com/YanLucasdaCostaSilva/biblioteca
    cd biblioteca
+   ```
    
 
 2. *Instalar as dependências do Composer:*
@@ -34,23 +35,27 @@ Antes de começar, certifique-se de ter instalado em sua máquina:
 
 Faça uma cópia do arquivo .env.example e renomeie para .env. Configure as variáveis de ambiente, especialmente as relacionadas ao banco de dados:
 
-   bash
+   ```bash
    cp .env.example .env
+   ```
    
 4. *Gerar a chave da aplicação:*
-   bash
+   ```bash
    php artisan key:generate
+   ```
    
 
 5. *Executar as migrações do banco de dados:*
 
-   bash
+   ```bash
    php artisan migrate
+   ```
    
 
 6. *Iniciar o servidor de desenvolvimento:*
-   bash
+   ```bash
    php artisan serve
+   ```
    
 Acesse http://localhost:8000 no seu navegador para ver a aplicação rodando.
 
